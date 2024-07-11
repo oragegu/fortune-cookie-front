@@ -103,6 +103,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/fortune-cookie-frontend",
+            "netlifyToken": "nfp_GUdpoBWAQw3duQ4BjjZ6BM1B64HEjU7S6a82",
+            "siteId": "591cdae3-a2fc-40a1-94ff-4faa7ccc0db4"
+          }
         }
       }
     }
