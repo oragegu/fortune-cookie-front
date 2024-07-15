@@ -5,16 +5,16 @@
     position: absolute;
     bottom: 10px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.5);
     padding: 10px 0;
-}
 
-.share-button {
-    background: transparent;
-    border: none;
+    .share-button {
+        background: transparent;
+        border: none;
 
-    img {
-        width: 32px;
-        height: 32px;
+        img {
+            width: 32px;
+            height: 32px;
+        }
     }
 }

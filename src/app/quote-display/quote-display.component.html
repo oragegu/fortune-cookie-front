@@ -1,6 +1,8 @@
 <div class="modal" id="quoteModal">
-    <div class="modal-content">
+    <div class="quote-image">
         <img [src]="currentQuote.image" style="width: auto; height:70vh;" alt="Quote Image" *ngIf="currentQuote.image">
     </div>
-    <app-share-buttons></app-share-buttons>
+    <div class="share-buttons-container">
+        <app-share-buttons></app-share-buttons>
+    </div>
 </div>

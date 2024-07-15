@@ -1,16 +1,9 @@
 .quote-container {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: auto;
 
-    .quote-image {
-        max-width: 600px;
-        margin: 0 auto;
 
-        img {
-            width: 100%;
-            height: 70vh;
-        }
-    }
 
     /* Modal Styles */
     .modal {
@@ -22,47 +15,32 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(1, 1, 1, 1);
+
         /* Semi-transparent background */
+        .quote-image {
+            max-width: 600px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                height: 70vh;
+            }
+
+        }
+
         z-index: 1000;
+
+        .share-buttons-container {
+            margin-top: 20rem;
+            /* Add margin to ensure spacing between the quote and buttons */
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            gap: 20px;
+            /* Adjust gap between share buttons */
+        }
     }
 
 
-    .modal-buttons {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .btn {
-        background-color: #ff4500;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .btn:hover {
-        background-color: #e03e00;
-    }
-
-    .social-icons {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .social-icons a img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .social-icons a {
-        display: inline-block;
-    }
 }

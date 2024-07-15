@@ -58,7 +58,7 @@ export class AppComponent {
   }
   playAudio() {
     let audio = new Audio();
-    audio.src = "/assets/rain-sound.mp3";
+    audio.src = "assets/rain-sound.mp3";
     audio.load();
     audio.play();
   }
