@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class ShareButtonsComponent {
   shareOnTwitter() {
-    window.open('https://twitter.com/intent/tweet?text=Check out this quote!', '_blank');
+    window.open('https://twitter.com/intent/tweet?text=Here is the quote &url=&hashtags=quote', '_blank');
   }
 
   shareOnInstagram() {
