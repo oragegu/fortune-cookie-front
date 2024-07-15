@@ -46,6 +46,7 @@ import {
   ]
 })
 export class AppComponent {
+  title = 't2 quotes';
   isDark = false;
   animationState = 'entered';
   // Boolean flag to track whether the component is shown or hidden

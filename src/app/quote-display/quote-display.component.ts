@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuoteService } from '../quote.service';
 import { Quote } from '../interfaces/quote.interface';
+import { ShareButtonsComponent } from '../share-buttons/share-buttons.component';
 import { MatButtonModule } from '@angular/material/button';
 import {
   MatDialog,
@@ -16,7 +17,7 @@ import {
 @Component({
   selector: 'app-quote-display',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ShareButtonsComponent],
   templateUrl: './quote-display.component.html',
   styleUrl: './quote-display.component.scss'
 })

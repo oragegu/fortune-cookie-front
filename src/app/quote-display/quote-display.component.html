@@ -1,17 +1,6 @@
 <div class="modal" id="quoteModal">
-    <audio #ref src="https://soundbible.com/grab.php?id=1964&type=mp3"></audio>
     <div class="modal-content">
         <img [src]="currentQuote.image" style="width: auto; height:70vh;" alt="Quote Image" *ngIf="currentQuote.image">
     </div>
-    <div class="modal-buttons">
-        <button class="btn">Read full article</button>
-        <button class="btn">Share with a friend</button>
-        <div class="social-icons">
-
-            <button (click)="ref.play()">▶️ play</button>
-            <a href="#"><img src="/assets/icons/icons8-twitterx.svg" alt="X"></a>
-            <a href="#"><img src="/assets/icons/icons8-instagram.svg" alt="Instagram"></a>
-            <button mat-flat-button color="primary" (click)="onCloseDialog()">Close</button>
-        </div>
-    </div>
+    <app-share-buttons></app-share-buttons>
 </div>
