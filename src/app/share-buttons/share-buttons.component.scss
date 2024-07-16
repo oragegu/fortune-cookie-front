@@ -1,12 +1,12 @@
 .share-buttons-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     position: absolute;
     bottom: 10px;
     width: 100%;
     background: rgba(255, 255, 255, 0.5);
-    padding: 10px 0;
+    padding: 10px 2px;
 
     .share-icon-button {
         background: transparent;
@@ -24,5 +24,6 @@
         justify-content: center;
         background: rgb(26, 23, 27, 0.93);
         color: aliceblue;
+        font-size: smaller;
     }
 }
