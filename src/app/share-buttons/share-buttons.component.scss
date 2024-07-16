@@ -8,7 +8,7 @@
     background: rgba(255, 255, 255, 0.5);
     padding: 10px 0;
 
-    .share-button {
+    .share-icon-button {
         background: transparent;
         border: none;
 
@@ -16,5 +16,13 @@
             width: 32px;
             height: 32px;
         }
+
+    }
+
+    .share-button {
+        top: 8px;
+        justify-content: center;
+        background: rgb(26, 23, 27, 0.93);
+        color: aliceblue;
     }
 }
