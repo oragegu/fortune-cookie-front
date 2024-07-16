@@ -39,6 +39,18 @@ body {
     max-width: 800px;
     color: #0b0b0b;
 
+    .logo-container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+
+        img {
+            width: 2rem;
+            height: auto;
+        }
+    }
+
     h1 {
         margin: .2rem 0;
         font-size: 8em;

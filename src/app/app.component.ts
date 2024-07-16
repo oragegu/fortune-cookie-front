@@ -83,4 +83,8 @@ export class AppComponent {
     })
   }
 
+  goToAboutPage(): void {
+    window.location.href = 'https://t2.world/';
+  }
+
 }
