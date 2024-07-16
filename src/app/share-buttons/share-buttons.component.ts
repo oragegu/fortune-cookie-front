@@ -16,4 +16,8 @@ export class ShareButtonsComponent {
   shareOnInstagram() {
     window.open('https://www.instagram.com/', '_blank');
   }
+
+  readFullArticle() {
+    window.open('https://app.t2.world/article/cltilxxnz41208321mcawxc5t7n', '_blank');
+  }
 }
