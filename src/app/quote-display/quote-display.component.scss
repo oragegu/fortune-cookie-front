@@ -1,11 +1,11 @@
 img {
-    max-height: 100cqh;
-    max-width: 600px;
+    max-height: 90vh;
+    max-width: 90vw;
     margin: 0 auto;
-    width: auto;
-    margin: 2px;
+    width: fit-content;
+    height: fit-content;
     border: 1.2rem solid white;
-    //display: flex;
+    display: flex;
 
 }
 
