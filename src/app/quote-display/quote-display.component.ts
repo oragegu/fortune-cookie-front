@@ -37,12 +37,12 @@ export class QuoteDisplayComponent implements OnInit {
   }
 
   getRandomQuote() {
-    const randomIndex = Math.floor(Math.random() * this.quotes.length);
-    this.currentQuote = this.quotes[randomIndex];
+    this.quoteService.selectQuote();
+    this.currentQuote = this.quoteService.getSelectedQuote();
   }
 
   newQuote() {
-    this.getRandomQuote();
+    this.quoteService.selectQuote();
   }
 
   onCloseDialog(): void {

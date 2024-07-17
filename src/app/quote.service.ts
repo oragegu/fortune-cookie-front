@@ -9,7 +9,23 @@ import quotesData from '../assets/quotes.json'
 export class QuoteService {
   private quotes: Quote[] = quotesData;
 
+  private selectedQuote: Quote = {
+    quote: '',
+    link: '',
+    image: ''
+  };
+
   getQuotes(): Quote[] {
     return this.quotes;
+  }
+
+  selectQuote() {
+    const randomIndex = Math.floor(Math.random() * this.quotes.length);
+    this.selectedQuote = this.quotes[randomIndex];
+
+  }
+
+  getSelectedQuote(): Quote {
+    return this.selectedQuote;
   }
 }
