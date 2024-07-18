@@ -34,6 +34,7 @@ export class ShareButtonsComponent {
   }
 
   readFullArticle() {
-    window.open('https://app.t2.world/article/cltilxxnz41208321mcawxc5t7n', '_blank');
+    this.currentQuote = this.quoteService.getSelectedQuote();
+    window.open(this.currentQuote.link, '_blank');
   }
 }
