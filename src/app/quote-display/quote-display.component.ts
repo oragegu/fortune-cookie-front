@@ -3,15 +3,7 @@ import { CommonModule } from '@angular/common';
 import { QuoteService } from '../quote.service';
 import { Quote } from '../interfaces/quote.interface';
 import { ShareButtonsComponent } from '../share-buttons/share-buttons.component';
-import { MatButtonModule } from '@angular/material/button';
-import {
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({

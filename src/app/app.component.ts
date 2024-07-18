@@ -1,16 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { QuoteDisplayComponent } from './quote-display/quote-display.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import {
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
+  MatDialog
 } from '@angular/material/dialog';
 
 
@@ -74,8 +69,8 @@ export class AppComponent {
       width: "auto",
       maxHeight: "90vh",
       maxWidth: "90vw",
-      enterAnimationDuration,
-      exitAnimationDuration,
+      enterAnimationDuration: 2,
+      exitAnimationDuration: 2,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
