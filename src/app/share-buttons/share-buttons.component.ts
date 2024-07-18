@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { QuoteService } from '../quote.service';
+import { Quote } from '../interfaces/quote.interface';
 
 @Component({
   selector: 'app-share-buttons',
@@ -9,8 +11,22 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './share-buttons.component.scss'
 })
 export class ShareButtonsComponent {
+
+  currentQuote: Quote = {
+    quote: '',
+    link: '',
+    image: ''
+  };
+
+  constructor(private quoteService: QuoteService) { }
+
   shareOnTwitter() {
-    window.open('https://twitter.com/intent/tweet?text=Here is the quote &url=&hashtags=quote', '_blank');
+    this.currentQuote = this.quoteService.getSelectedQuote();
+    let shareText: String = 'I’m feeling inspired by this beautiful quote. Get your inspiration today at';
+    let websiteLink: String = 'https://bejewelled-truffle-fb6d6c.netlify.app/';
+    let twitterxUrl: String = shareText + '&url=' + websiteLink + '&hashtags=t2world';
+
+    window.open('https://twitter.com/intent/tweet?text=' + twitterxUrl, '_blank');
   }
 
   shareOnInstagram() {
