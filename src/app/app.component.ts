@@ -52,6 +52,9 @@ export class AppComponent implements AfterViewInit {
   // Boolean flag to track whether the component is shown or hidden
   show = false;
 
+  img = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/500px-Speaker_Icon.svg.png";
+  private muted = false;
+
   // Getter method to determine the current state ('show' or 'hide') based on the 'show' flag
   get presentState() {
     return this.show ? 'show' : 'hide';
@@ -87,5 +90,18 @@ export class AppComponent implements AfterViewInit {
     console.log(this.$player);
     this.$player.volume = 0.1;
   }
+
+  toggleSound() {
+    if (this.muted == false) {
+      this.img = "https://cdn2.iconfinder.com/data/icons/picons-essentials/57/music_off-512.png";
+      this.muted = true;
+      this.$player.muted = true;
+    } else {
+      this.img = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/500px-Speaker_Icon.svg.png";
+      this.muted = false;
+      this.$player.muted = false;
+    }
+  }
+
 
 }
