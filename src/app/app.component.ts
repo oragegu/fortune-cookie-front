@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  AfterViewInit,
+  ElementRef
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { QuoteDisplayComponent } from './quote-display/quote-display.component';
@@ -40,7 +45,7 @@ import {
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 't2 quotes';
   isDark = false;
   animationState = 'entered';
@@ -51,16 +56,6 @@ export class AppComponent {
   get presentState() {
     return this.show ? 'show' : 'hide';
   }
-  playAudio() {
-    let audio = new Audio();
-    audio.src = "assets/rain-sound.mp3";
-    audio.load();
-    audio.play();
-  }
-  ngInit() {
-    this.playAudio();
-  }
-
   constructor(public dialog: MatDialog) { }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -80,6 +75,17 @@ export class AppComponent {
 
   goToAboutPage(): void {
     window.location.href = 'https://t2.world/';
+  }
+
+  @ViewChild('stream') playerRef!: ElementRef<HTMLAudioElement>;
+
+  get $player(): HTMLAudioElement {
+    return this.playerRef.nativeElement;
+  }
+
+  ngAfterViewInit() {
+    console.log(this.$player);
+    this.$player.volume = 0.1;
   }
 
 }
