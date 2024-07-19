@@ -31,7 +31,7 @@ export class ShareButtonsComponent {
   }
 
   shareOnWhatsApp() {
-    let whatsappUrl: String = this.shareText + '' + this.websiteLink;
+    let whatsappUrl: String = this.shareText + ' ' + this.websiteLink;
     window.open('https://api.whatsapp.com/send?&text=' + whatsappUrl, '_blank');
   }
 
