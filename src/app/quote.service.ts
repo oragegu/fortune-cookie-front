@@ -10,6 +10,7 @@ export class QuoteService {
   private quotes: Quote[] = quotesData;
 
   private selectedQuote: Quote = {
+    id: -1,
     quote: '',
     link: '',
     image: ''
@@ -27,5 +28,9 @@ export class QuoteService {
 
   getSelectedQuote(): Quote {
     return this.selectedQuote;
+  }
+
+  getQuoteById(id: number): Quote | undefined {
+    return this.quotes.find(q => q.id === id);
   }
 }

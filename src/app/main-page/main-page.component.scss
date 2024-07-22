@@ -1,0 +1,68 @@
+/* Global Styles */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    /* Ensure the video does not overflow */
+}
+
+#myVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    /* Ensure the video is behind the content */
+
+    object-fit: cover;
+    /* This ensures the video covers the entire container while maintaining aspect ratio */
+}
+
+.hero-content {
+    background-color: transparent;
+    z-index: 1;
+    /* Ensure content is above the video */
+    max-width: 800px;
+    color: #0b0b0b;
+
+    .logo-container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+
+        img {
+            width: 2rem;
+            height: auto;
+        }
+    }
+
+    h1 {
+        margin: .2rem 0;
+        font-size: 8em;
+        line-height: 0.4rem;
+        word-wrap: break-word;
+        margin-bottom: 7rem;
+        border-spacing: 3em;
+    }
+
+    p {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}

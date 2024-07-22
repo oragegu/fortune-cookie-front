@@ -16,6 +16,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class QuoteDisplayComponent implements OnInit {
   quotes: Quote[] = [];
   currentQuote: Quote = {
+    id: -1,
     quote: '',
     link: '',
     image: ''

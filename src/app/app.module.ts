@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { QuoteDisplayComponent } from './quote-display/quote-display.component';
@@ -21,7 +23,8 @@ import { QuoteService } from './quote.service';
         BrowserAnimationsModule,
         QuoteDisplayComponent,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        RouterModule.forRoot(routes)
     ],
     providers: [
         QuoteService,

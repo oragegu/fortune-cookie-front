@@ -13,6 +13,7 @@ import { Quote } from '../interfaces/quote.interface';
 export class ShareButtonsComponent {
 
   currentQuote: Quote = {
+    id: -1,
     quote: '',
     link: '',
     image: ''
