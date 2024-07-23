@@ -1,7 +1,11 @@
-<html>
-<div *ngIf="quote">
-    <img [src]="quote.image" alt="Quote Image">
-    <p class="quote-text">{{ quote.quote }}</p>
+<div class="quote-page-container">
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="assets/background-hero-video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="quote-content" *ngIf="quote">
+        <div class="quote-image">
+            <img [src]="quote.image" alt="Quote Image">
+        </div>
+    </div>
 </div>
-
-</html>
