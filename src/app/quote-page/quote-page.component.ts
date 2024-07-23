@@ -25,4 +25,7 @@ export class QuotePageComponent implements OnInit {
     const id = +this.route.snapshot.params['id']; // Convert the id to a number
     this.quote = this.quoteService.getQuoteById(id);
   }
+  goToAboutPage(): void {
+    window.location.href = 'https://t2.world/';
+  }
 }

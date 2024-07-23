@@ -3,6 +3,9 @@
         <source src="assets/background-hero-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
+    <div class="logo-container">
+        <img src="assets/logo.svg" alt="Logo" (click)="goToAboutPage()">
+    </div>
     <div class="quote-content" *ngIf="quote">
         <div class="quote-image">
             <img [src]="quote.image" alt="Quote Image">
