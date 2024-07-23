@@ -84,17 +84,27 @@ export class MainPageComponent implements AfterViewInit, OnInit {
   }
 
   @ViewChild('stream') playerRef!: ElementRef<HTMLAudioElement>;
+  @ViewChild('videoStream') videoPlayerRef!: ElementRef<HTMLVideoElement>;
 
   get $player(): HTMLAudioElement {
     return this.playerRef.nativeElement;
+  }
+
+  get $videoplayer(): HTMLVideoElement {
+    return this.videoPlayerRef.nativeElement;
   }
 
   ngAfterViewInit() {
     console.log(this.$player);
     this.$player.volume = 0.1;
     this.$player.autoplay = true;
+    this.$player.pause();
+    this.$player.play();
     this.muted = false;
     this.$player.muted = false;
+    this.$videoplayer.autoplay = true;
+    this.$videoplayer.pause();
+    this.$videoplayer.play();
   }
 
   ngOnInit(): void {
