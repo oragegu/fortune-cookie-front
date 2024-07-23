@@ -93,9 +93,12 @@ export class MainPageComponent implements AfterViewInit, OnInit {
     console.log(this.$player);
     this.$player.volume = 0.1;
     this.$player.autoplay = true;
+    this.muted = false;
+    this.$player.muted = false;
   }
 
   ngOnInit(): void {
+    this.$player.autoplay = true;
     this.muted = false;
     this.$player.muted = false;
 
