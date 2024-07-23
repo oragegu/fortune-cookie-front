@@ -53,6 +53,7 @@ export class MainPageComponent implements AfterViewInit {
   // Boolean flag to track whether the component is shown or hidden
   show = false;
 
+
   img = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/500px-Speaker_Icon.svg.png";
   private muted = false;
 
@@ -90,6 +91,7 @@ export class MainPageComponent implements AfterViewInit {
   ngAfterViewInit() {
     console.log(this.$player);
     this.$player.volume = 0.1;
+    this.$player.play();
   }
 
   toggleSound() {
