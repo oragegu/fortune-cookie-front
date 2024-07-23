@@ -2,7 +2,8 @@ import {
   Component,
   ViewChild,
   AfterViewInit,
-  ElementRef
+  ElementRef,
+  OnInit
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -46,7 +47,7 @@ import {
     ])
   ]
 })
-export class MainPageComponent implements AfterViewInit {
+export class MainPageComponent implements AfterViewInit, OnInit {
   title = 't2 quotes';
   isDark = false;
   animationState = 'entered';
@@ -91,7 +92,10 @@ export class MainPageComponent implements AfterViewInit {
   ngAfterViewInit() {
     console.log(this.$player);
     this.$player.volume = 0.1;
-    this.$player.play();
+    this.$player.autoplay = true;
+  }
+
+  ngOnInit(): void {
   }
 
   toggleSound() {
