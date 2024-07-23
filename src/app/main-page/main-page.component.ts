@@ -96,6 +96,8 @@ export class MainPageComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
+    this.muted = false;
+    this.$player.muted = false;
 
   }
 
