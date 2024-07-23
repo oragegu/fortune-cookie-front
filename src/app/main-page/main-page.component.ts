@@ -96,6 +96,7 @@ export class MainPageComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   toggleSound() {
@@ -104,7 +105,7 @@ export class MainPageComponent implements AfterViewInit, OnInit {
       this.muted = true;
       this.$player.muted = true;
     } else {
-      this.img = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/500px-Speaker_Icon.svg.png";
+      this.img = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/500px-Speaker_Icon.svg.png";
       this.muted = false;
       this.$player.muted = false;
     }
