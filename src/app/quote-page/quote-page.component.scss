@@ -15,7 +15,7 @@
         transform: translate(-50%, -50%);
         z-index: -1;
         object-fit: cover;
-        filter: brightness(75%);
+        filter: brightness(45%);
     }
 
     .quote-content {
@@ -24,7 +24,7 @@
         /* Ensure content is above the video */
         display: flex;
         justify-content: center;
-        margin-top: 10vh;
+        margin-top: 5vh;
 
         .quote-image {
             max-width: 90vw;
@@ -43,6 +43,15 @@
                 //border: 2px solid white;
             }
         }
+
+    }
+
+    #myReadButton {
+        position: relative;
+        justify-content: center;
+        margin: auto;
+        margin-top: 4vh;
+        display: flex;
     }
 
     .logo-container {
@@ -56,4 +65,5 @@
             height: auto;
         }
     }
+
 }

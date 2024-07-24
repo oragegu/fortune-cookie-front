@@ -28,4 +28,10 @@ export class QuotePageComponent implements OnInit {
   goToAboutPage(): void {
     window.location.href = 'https://t2.world/';
   }
+
+  readFullArticle(): void {
+    if (this.quote != undefined) {
+      window.open(this.quote.link, '_blank');
+    }
+  }
 }
