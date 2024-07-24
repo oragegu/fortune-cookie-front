@@ -3,5 +3,3 @@
   to = "/index.html"
   status = 200
 
-/assets/*.mp4
-  Content-Type: video/mp4
