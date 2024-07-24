@@ -4,7 +4,7 @@ import { QuoteService } from '../quote.service';
 import { CommonModule } from '@angular/common';
 import { QuoteDisplayComponent } from '../quote-display/quote-display.component';
 import { Quote } from '../interfaces/quote.interface';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quote-page',
@@ -18,7 +18,8 @@ export class QuotePageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private quoteService: QuoteService
+    private quoteService: QuoteService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,4 +35,9 @@ export class QuotePageComponent implements OnInit {
       window.open(this.quote.link, '_blank');
     }
   }
+
+  goToMainQuotePage(): void {
+    this.router.navigateByUrl('');
+  }
+
 }
