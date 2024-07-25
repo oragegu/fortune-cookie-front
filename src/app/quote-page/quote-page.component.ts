@@ -31,8 +31,8 @@ export class QuotePageComponent implements OnInit {
     this.metaService.updateTitle('Quote - t2 quotes');
     if (this.quote != undefined) {
       this.metaService.updateDescription(this.quote.quote);
-      this.metaService.updateTwitterImage("https://bejewelled-truffle-fb6d6c.netlify.app/" + this.quote.image.toString());
-      console.log("https://bejewelled-truffle-fb6d6c.netlify.app/" + this.quote.image.toString());
+      this.metaService.updateTwitterImage("https://bejewelled-truffle-fb6d6c.netlify.app/" + this.quote.image);
+      console.log("https://bejewelled-truffle-fb6d6c.netlify.app/" + this.quote.image);
     } else {
       this.metaService.updateDescription("");
       this.metaService.updateTwitterImage("https://bejewelled-truffle-fb6d6c.netlify.app/assets/images/no-quote.png");
