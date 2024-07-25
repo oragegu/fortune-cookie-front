@@ -25,16 +25,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        max-height: 80vh;
+        height: auto;
+        width: auto;
         margin: auto;
-        padding-top: 10%;
 
         .quote-image {
             max-width: 80vw;
             max-height: 80vh;
             width: auto;
             height: auto;
-            margin-top: 7rem;
+            margin-top: 12rem;
 
             img {
                 width: auto;

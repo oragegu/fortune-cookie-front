@@ -94,8 +94,6 @@ export class MainPageComponent implements AfterViewInit {
   ngAfterViewInit() {
     console.log(this.$player);
     this.$player.volume = 0.1;
-    this.$player.autoplay = true;
-    this.$player.play();
   }
 
   toggleSound() {
