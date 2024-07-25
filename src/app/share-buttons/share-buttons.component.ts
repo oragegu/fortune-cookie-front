@@ -8,7 +8,7 @@ import { Quote } from '../interfaces/quote.interface';
   standalone: true,
   imports: [MatButtonModule],
   templateUrl: './share-buttons.component.html',
-  styleUrl: './share-buttons.component.scss'
+  styleUrl: './share-buttons.component.scss',
 })
 export class ShareButtonsComponent {
 
@@ -16,7 +16,7 @@ export class ShareButtonsComponent {
     id: -1,
     quote: '',
     link: '',
-    image: ''
+    image: 'assets/images/no-quote.png'
   };
 
   constructor(private quoteService: QuoteService) { }

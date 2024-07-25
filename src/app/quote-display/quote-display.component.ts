@@ -1,17 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { QuoteService } from '../quote.service';
 import { Quote } from '../interfaces/quote.interface';
 import { ShareButtonsComponent } from '../share-buttons/share-buttons.component';
 import { MatDialogRef } from '@angular/material/dialog';
-
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-quote-display',
   standalone: true,
-  imports: [CommonModule, ShareButtonsComponent],
+  imports: [CommonModule, ShareButtonsComponent, NgOptimizedImage],
   templateUrl: './quote-display.component.html',
-  styleUrl: './quote-display.component.scss'
+  styleUrl: './quote-display.component.scss',
+  animations: [
+    trigger('fadeInOut', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition(':enter', [
+        animate('2s', style({
+          opacity: 1
+        }))
+      ])
+    ])
+  ]
 })
 export class QuoteDisplayComponent implements OnInit {
   quotes: Quote[] = [];
@@ -21,6 +33,8 @@ export class QuoteDisplayComponent implements OnInit {
     link: '',
     image: ''
   };
+
+  imageLoaded: boolean = true;
 
   constructor(public dialogRef: MatDialogRef<QuoteDisplayComponent>, private quoteService: QuoteService) { }
 
@@ -40,5 +54,10 @@ export class QuoteDisplayComponent implements OnInit {
 
   onCloseDialog(): void {
     this.dialogRef.close();
+    this.imageLoaded = false;
+  }
+
+  onImageLoad(): void {
+    this.imageLoaded = true;
   }
 }

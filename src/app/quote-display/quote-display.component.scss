@@ -7,13 +7,21 @@
 }
 
 img {
-    max-height: 70vh;
+    max-height: 60vh;
     max-width: 70vw;
     margin: 0 auto;
     width: auto;
     height: auto;
     background-color: #a75c5c00;
+    transition: opacity 1s ease-in-out;
+}
 
+.default-image {
+    opacity: 0;
+}
+
+.actual-image {
+    opacity: 1;
 }
 
 .share-buttons-container {
