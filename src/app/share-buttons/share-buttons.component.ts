@@ -28,7 +28,7 @@ export class ShareButtonsComponent {
     this.currentQuote = this.quoteService.getSelectedQuote();
     let twitterxUrl: String = this.shareText + '&url=' + this.websiteLink + this.currentQuote.id.toString + '&hashtags=t2world';
 
-    window.open('https://twitter.com/intent/tweet?text=' + twitterxUrl, '_blank');
+    window.open('https://x.com/intent/tweet?text=' + twitterxUrl, '_blank');
   }
 
   shareOnWhatsApp() {
