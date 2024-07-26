@@ -22,7 +22,7 @@ export class ShareButtonsComponent {
   constructor(private quoteService: QuoteService) { }
 
   private shareText: String = 'I’m feeling inspired by this beautiful quote. Get your inspiration today at';
-  private websiteLink: String = 'https://bejewelled-truffle-fb6d6c.netlify.app/quote/ ';
+  private websiteLink: String = 'https://bejewelled-truffle-fb6d6c.netlify.app/quote/';
 
   shareOnTwitter() {
     this.currentQuote = this.quoteService.getSelectedQuote();
