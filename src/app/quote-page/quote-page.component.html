@@ -1,5 +1,5 @@
 <div class="quote-page-container">
-    <video autoplay muted loop id="backgroundVideo">
+    <video autoplay muted loop oncanplay="this.play()" onloadedmetadata="this.muted = true" id="backgroundVideo">
         <source src="assets/background-hero-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
