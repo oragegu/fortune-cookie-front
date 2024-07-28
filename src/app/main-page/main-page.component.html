@@ -1,6 +1,6 @@
 <div class="hero">
     <div class="hero-content">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay muted loop oncanplay="this.play()" onloadedmetadata="this.muted = true" id="myVideo">
             <source src="assets/background-hero-video.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
@@ -8,7 +8,8 @@
             <img src="assets/logo.svg" alt="Logo" (click)="goToAboutPage()">
             <img src={{img}} (click)="toggleSound()" width=20% height=20%>
         </div>
-        <audio class="wave-sound" loop autoplay muted=false #stream src="assets/sea-waves.mp3"></audio>
+        <audio class="wave-sound" loop autoplay oncanplay="this.play()" onloadedmetadata="this.muted = false" #stream
+            src="assets/sea-waves.mp3"></audio>
         <button
             class="bg-t2orange border border-t2black font-base hover:hovered-welcome-button text-lg py-3 px-12 rounded-full"
             (click)="openDialog('300ms', '150ms')" [@fadeInOut]>
