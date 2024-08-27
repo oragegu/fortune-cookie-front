@@ -1,7 +1,6 @@
 <div class="modal" [@fadeInOut]>
     <div>
-        <img *ngIf="!imageLoaded" src="assets/images/no-quote.png" class="default-image">
-        <img [src]="currentQuote.image" class="actual-image" alt="Quote Image">
+        <img [src]="currentQuote.image" class="actual-image" alt="Quote Image" fetchpriority="high">
     </div>
     <div class="share-buttons-container" [@fadeInOut]>
         <app-share-buttons></app-share-buttons>

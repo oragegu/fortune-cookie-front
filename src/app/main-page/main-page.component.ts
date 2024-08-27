@@ -2,7 +2,8 @@ import {
   Component,
   ViewChild,
   AfterViewInit,
-  ElementRef
+  ElementRef,
+  OnInit
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -12,7 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {
   MatDialog
 } from '@angular/material/dialog';
-
+import { ImagePreloadService } from '../image-preload.service';
+import { QuoteService } from '../quote.service';
 
 
 @Component({
@@ -46,7 +48,7 @@ import {
     ])
   ]
 })
-export class MainPageComponent implements AfterViewInit {
+export class MainPageComponent implements AfterViewInit, OnInit {
   title = 't2 quotes';
   isDark = false;
   animationState = 'entered';
@@ -61,8 +63,18 @@ export class MainPageComponent implements AfterViewInit {
   get presentState() {
     return this.show ? 'show' : 'hide';
   }
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+    private imagePreloadService: ImagePreloadService,
+    private quoteService: QuoteService) { }
 
+  ngOnInit(): void {
+    this.quoteService.selectQuote();
+    const randomQuote = this.quoteService.getSelectedQuote();
+    const imageUrl = randomQuote.image; // Assuming the randomQuote has an image property
+
+    // Preload the image
+    this.imagePreloadService.preloadImage(imageUrl);
+  }
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     const dialogRef = this.dialog.open(QuoteDisplayComponent, {
       height: "auto",
@@ -75,11 +87,11 @@ export class MainPageComponent implements AfterViewInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The quote dialog was closed')
+      // Pause audio when dialog closes
+      this.playerRef.nativeElement.pause();
     })
-  }
-
-  goToAboutPage(): void {
-    window.location.href = 'https://t2.world/';
+    // Play audio when dialog opens
+    this.playerRef.nativeElement.play();
   }
 
   @ViewChild('stream') playerRef!: ElementRef<HTMLAudioElement>;
@@ -87,9 +99,11 @@ export class MainPageComponent implements AfterViewInit {
     return this.playerRef.nativeElement;
   }
 
-  /*get $videoplayer(): HTMLVideoElement {
-    return this.videoPlayerRef.nativeElement;
-  }*/
+  goToAboutPage(): void {
+    window.location.href = 'https://t2.world/';
+  }
+
+
 
   ngAfterViewInit() {
     console.log(this.$player);
