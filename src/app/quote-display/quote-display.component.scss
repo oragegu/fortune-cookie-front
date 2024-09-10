@@ -6,14 +6,24 @@
     background-color: rgba(167, 92, 92, 0);
 }
 
+.image-container {
+    flex: 1; // Take remaining space
+    display: flex;
+    min-width: 30vw;
+    min-height: 30vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
 img {
-    max-height: 68vh;
+    max-height: calc(100% - 80px);
     max-width: 70vw;
-    margin: 0 auto;
-    width: auto;
+    width: 80%;
     height: auto;
     background-color: #a75c5c00;
     transition: opacity 1s ease-in-out;
+    object-fit: contain;
 }
 
 .default-image {
@@ -25,6 +35,9 @@ img {
 }
 
 .share-buttons-container {
-    flex-grow: 1;
+    position: fixed;
+    height: 100px;
+    bottom: 10%;
+    left: 35%;
     background-color: #a75c5c00;
 }

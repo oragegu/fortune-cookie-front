@@ -80,7 +80,10 @@ export class MainPageComponent implements AfterViewInit, OnInit {
       height: "auto",
       width: "auto",
       maxHeight: "90vh",
-      maxWidth: "90vw",
+      maxWidth: "98vw",
+      minHeight: "50vh",
+      minWidth: "30vh",
+      //panelClass: "centered-dialog",
       enterAnimationDuration: 2,
       exitAnimationDuration: 2,
     });
