@@ -79,10 +79,10 @@ export class MainPageComponent implements AfterViewInit, OnInit {
     const dialogRef = this.dialog.open(QuoteDisplayComponent, {
       height: "auto",
       width: "auto",
-      maxHeight: "90vh",
+      maxHeight: "98vh",
       maxWidth: "98vw",
-      minHeight: "50vh",
-      minWidth: "30vh",
+      minHeight: "50vmin",
+      minWidth: "50vmin",
       //panelClass: "centered-dialog",
       enterAnimationDuration: 2,
       exitAnimationDuration: 2,
