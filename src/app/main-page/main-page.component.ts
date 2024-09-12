@@ -13,7 +13,6 @@ import { MatButtonModule } from '@angular/material/button';
 import {
   MatDialog
 } from '@angular/material/dialog';
-import { ImagePreloadService } from '../image-preload.service';
 import { QuoteService } from '../quote.service';
 
 
@@ -64,16 +63,11 @@ export class MainPageComponent implements AfterViewInit, OnInit {
     return this.show ? 'show' : 'hide';
   }
   constructor(public dialog: MatDialog,
-    private imagePreloadService: ImagePreloadService,
     private quoteService: QuoteService) { }
 
   ngOnInit(): void {
     this.quoteService.selectQuote();
     const randomQuote = this.quoteService.getSelectedQuote();
-    const imageUrl = randomQuote.image; // Assuming the randomQuote has an image property
-
-    // Preload the image
-    this.imagePreloadService.preloadImage(imageUrl);
   }
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     const dialogRef = this.dialog.open(QuoteDisplayComponent, {
@@ -86,6 +80,7 @@ export class MainPageComponent implements AfterViewInit, OnInit {
       //panelClass: "centered-dialog",
       enterAnimationDuration: 2,
       exitAnimationDuration: 2,
+      autoFocus: false,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
