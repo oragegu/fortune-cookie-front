@@ -11,7 +11,11 @@ module.exports = {
       't2orange': '#F85E4A',
       't2black': '#1A171B'
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        'ivar': ['Ivar Complete', 'Arial', 'Helvetica', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
