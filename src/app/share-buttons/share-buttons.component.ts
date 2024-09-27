@@ -22,17 +22,17 @@ export class ShareButtonsComponent {
   constructor(private quoteService: QuoteService) { }
 
   private shareText: String = 'I’m feeling inspired by this beautiful quote. Get your inspiration today at';
-  private websiteLink: String = 'https://bejewelled-truffle-fb6d6c.netlify.app/quote/';
+  private websiteLink: String = 'https://static-quotes-production.up.railway.app/';
 
   shareOnTwitter() {
     this.currentQuote = this.quoteService.getSelectedQuote();
-    let twitterxUrl: String = this.shareText + '&url=' + this.websiteLink + this.currentQuote.id.toString() + ' &hashtags=t2world';
+    let twitterxUrl: String = this.shareText + '&url=' + this.websiteLink + this.currentQuote.id.toString() + '.html' + ' &hashtags=t2world';
 
     window.open('https://twitter.com/intent/tweet?text=' + twitterxUrl, '_blank');
   }
 
   shareOnWhatsApp() {
-    let whatsappUrl: String = this.shareText + ' ' + this.websiteLink + this.currentQuote.id.toString();
+    let whatsappUrl: String = this.shareText + ' ' + this.websiteLink + this.currentQuote.id.toString() + '.html';
     window.open('https://api.whatsapp.com/send?&text=' + whatsappUrl, '_blank');
   }
 
